@@ -16,5 +16,27 @@ namespace Quiz
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+
+    public class Question
+    {
+        String textof;
+        String [] answers = new String[4];
+        int r_answer;
+        public Question(String textof, String [] answers, int r_answer)
+        {
+            this.textof = textof;
+            this.answers = answers;
+            this.r_answer = r_answer;
+        }
+        public int R_ans()
+        {
+            return r_answer;
+        }
     }
 }
