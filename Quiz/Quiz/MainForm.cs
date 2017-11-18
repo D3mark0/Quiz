@@ -40,5 +40,10 @@ namespace Quiz
                 frm.Show();
             }
         }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

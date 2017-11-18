@@ -116,6 +116,7 @@
             this.button2.TabIndex = 4;
             this.button2.Text = "Отменить";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // EditQuestionForm
             // 
@@ -130,6 +131,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "EditQuestionForm";
             this.Text = "Редактирование вопроса";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditQuestionForm_FormClosing);
             this.Load += new System.EventHandler(this.EditQuestionForm_Load);
             this.groupBoxAnswers.ResumeLayout(false);
             this.groupBoxAnswers.PerformLayout();
