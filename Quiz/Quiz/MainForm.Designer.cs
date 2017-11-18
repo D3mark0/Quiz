@@ -99,9 +99,7 @@
             treeNode34,
             treeNode35,
             treeNode36});
-            System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("Посмотреть вопросы");
-            System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("Вопросы", new System.Windows.Forms.TreeNode[] {
-            treeNode38});
+            System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("Вопросы");
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.SuspendLayout();
             // 
@@ -185,18 +183,16 @@
             treeNode36.Text = "Полное тестирование";
             treeNode37.Name = "test";
             treeNode37.Text = "Тестирование";
-            treeNode38.Name = "seequestion";
-            treeNode38.Text = "Посмотреть вопросы";
-            treeNode39.Name = "questions";
-            treeNode39.Text = "Вопросы";
+            treeNode38.Name = "questions";
+            treeNode38.Text = "Вопросы";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode8,
             treeNode20,
             treeNode27,
             treeNode31,
             treeNode37,
-            treeNode39});
-            this.treeView1.Size = new System.Drawing.Size(582, 366);
+            treeNode38});
+            this.treeView1.Size = new System.Drawing.Size(614, 448);
             this.treeView1.TabIndex = 0;
             this.treeView1.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseDoubleClick);
             // 
@@ -204,11 +200,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(606, 390);
+            this.ClientSize = new System.Drawing.Size(638, 472);
             this.Controls.Add(this.treeView1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Text = "ОБЩЕВОЕННАЯ ПОДГОТОВКА";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 

@@ -1,6 +1,6 @@
 ﻿namespace Quiz
 {
-    partial class Questions
+    partial class QuestionsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,35 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("ОВП.01. Общевоинские уставы");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("ОВП.02. Строевая подготовка");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("ОВП.03. Огневая подготовка");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("ОВП.04. Топография");
+            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("ОВП.01. Общевоинские уставы");
+            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("ОВП.02. Строевая подготовка");
+            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("ОВП.03. Огневая подготовка");
+            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("ОВП.04. Топография");
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.textBoxQuestion = new System.Windows.Forms.TextBox();
             this.textBoxAnswers = new System.Windows.Forms.TextBox();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // treeView1
             // 
             this.treeView1.Location = new System.Drawing.Point(12, 12);
             this.treeView1.Name = "treeView1";
-            treeNode1.Name = "1";
-            treeNode1.Text = "ОВП.01. Общевоинские уставы";
-            treeNode2.Name = "2";
-            treeNode2.Text = "ОВП.02. Строевая подготовка";
-            treeNode3.Name = "3";
-            treeNode3.Text = "ОВП.03. Огневая подготовка";
-            treeNode4.Name = "4";
-            treeNode4.Text = "ОВП.04. Топография";
+            treeNode25.Name = "1";
+            treeNode25.Text = "ОВП.01. Общевоинские уставы";
+            treeNode26.Name = "2";
+            treeNode26.Text = "ОВП.02. Строевая подготовка";
+            treeNode27.Name = "3";
+            treeNode27.Text = "ОВП.03. Огневая подготовка";
+            treeNode28.Name = "4";
+            treeNode28.Text = "ОВП.04. Топография";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3,
-            treeNode4});
+            treeNode25,
+            treeNode26,
+            treeNode27,
+            treeNode28});
             this.treeView1.Size = new System.Drawing.Size(272, 452);
             this.treeView1.TabIndex = 1;
             this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
@@ -64,66 +66,87 @@
             // 
             // textBoxQuestion
             // 
-            this.textBoxQuestion.Location = new System.Drawing.Point(290, 12);
+            this.textBoxQuestion.Location = new System.Drawing.Point(290, 30);
             this.textBoxQuestion.Multiline = true;
             this.textBoxQuestion.Name = "textBoxQuestion";
             this.textBoxQuestion.ReadOnly = true;
-            this.textBoxQuestion.Size = new System.Drawing.Size(340, 198);
+            this.textBoxQuestion.Size = new System.Drawing.Size(340, 190);
             this.textBoxQuestion.TabIndex = 0;
             // 
             // textBoxAnswers
             // 
-            this.textBoxAnswers.Location = new System.Drawing.Point(290, 216);
+            this.textBoxAnswers.Location = new System.Drawing.Point(290, 239);
             this.textBoxAnswers.Multiline = true;
             this.textBoxAnswers.Name = "textBoxAnswers";
             this.textBoxAnswers.ReadOnly = true;
-            this.textBoxAnswers.Size = new System.Drawing.Size(340, 198);
+            this.textBoxAnswers.Size = new System.Drawing.Size(340, 190);
             this.textBoxAnswers.TabIndex = 2;
             // 
             // buttonAdd
             // 
             this.buttonAdd.Enabled = false;
-            this.buttonAdd.Location = new System.Drawing.Point(290, 420);
+            this.buttonAdd.Location = new System.Drawing.Point(290, 441);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(106, 44);
+            this.buttonAdd.Size = new System.Drawing.Size(75, 23);
             this.buttonAdd.TabIndex = 3;
-            this.buttonAdd.Text = "Добавить вопрос";
+            this.buttonAdd.Text = "Добавить";
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // buttonEdit
             // 
             this.buttonEdit.Enabled = false;
-            this.buttonEdit.Location = new System.Drawing.Point(402, 420);
+            this.buttonEdit.Location = new System.Drawing.Point(414, 441);
             this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(116, 44);
+            this.buttonEdit.Size = new System.Drawing.Size(94, 23);
             this.buttonEdit.TabIndex = 4;
-            this.buttonEdit.Text = "Редактировать вопрос";
+            this.buttonEdit.Text = "Редактировать";
             this.buttonEdit.UseVisualStyleBackColor = true;
             // 
             // buttonDelete
             // 
             this.buttonDelete.Enabled = false;
-            this.buttonDelete.Location = new System.Drawing.Point(524, 420);
+            this.buttonDelete.Location = new System.Drawing.Point(555, 441);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(106, 44);
+            this.buttonDelete.Size = new System.Drawing.Size(75, 23);
             this.buttonDelete.TabIndex = 5;
-            this.buttonDelete.Text = "Удалить вопрос";
+            this.buttonDelete.Text = "Удалить";
             this.buttonDelete.UseVisualStyleBackColor = true;
             // 
-            // Questions
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(290, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Текст вопроса:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(290, 223);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(103, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Варианты ответов:";
+            // 
+            // QuestionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(642, 476);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.textBoxAnswers);
             this.Controls.Add(this.textBoxQuestion);
             this.Controls.Add(this.treeView1);
-            this.Name = "Questions";
-            this.Text = "Questions";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "QuestionsForm";
+            this.Text = "Вопросы";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,5 +160,7 @@
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.Button buttonDelete;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

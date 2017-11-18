@@ -46,7 +46,7 @@
             this.textBoxQuestion.Multiline = true;
             this.textBoxQuestion.Name = "textBoxQuestion";
             this.textBoxQuestion.ReadOnly = true;
-            this.textBoxQuestion.Size = new System.Drawing.Size(600, 110);
+            this.textBoxQuestion.Size = new System.Drawing.Size(641, 83);
             this.textBoxQuestion.TabIndex = 0;
             this.textBoxQuestion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -56,9 +56,9 @@
             this.groupBoxAnswers.Controls.Add(this.radioButton3);
             this.groupBoxAnswers.Controls.Add(this.radioButton2);
             this.groupBoxAnswers.Controls.Add(this.radioButton1);
-            this.groupBoxAnswers.Location = new System.Drawing.Point(12, 141);
+            this.groupBoxAnswers.Location = new System.Drawing.Point(12, 114);
             this.groupBoxAnswers.Name = "groupBoxAnswers";
-            this.groupBoxAnswers.Size = new System.Drawing.Size(600, 124);
+            this.groupBoxAnswers.Size = new System.Drawing.Size(641, 135);
             this.groupBoxAnswers.TabIndex = 1;
             this.groupBoxAnswers.TabStop = false;
             this.groupBoxAnswers.Text = "Варианты ответов:";
@@ -109,7 +109,7 @@
             // 
             // buttonNext
             // 
-            this.buttonNext.Location = new System.Drawing.Point(12, 271);
+            this.buttonNext.Location = new System.Drawing.Point(12, 255);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(75, 23);
             this.buttonNext.TabIndex = 2;
@@ -118,7 +118,7 @@
             // 
             // buttonExit
             // 
-            this.buttonExit.Location = new System.Drawing.Point(537, 271);
+            this.buttonExit.Location = new System.Drawing.Point(578, 255);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(75, 23);
             this.buttonExit.TabIndex = 3;
@@ -139,12 +139,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 301);
+            this.ClientSize = new System.Drawing.Size(665, 292);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonNext);
             this.Controls.Add(this.groupBoxAnswers);
             this.Controls.Add(this.textBoxQuestion);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "QuizForm";
             this.Text = "Тестирование";
             this.Load += new System.EventHandler(this.QuizForm_Load);

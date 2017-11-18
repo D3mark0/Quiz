@@ -127,8 +127,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBoxAnswers);
             this.Controls.Add(this.textBoxQuestion);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "EditQuestionForm";
-            this.Text = "EditQuestionForm";
+            this.Text = "Редактирование вопроса";
             this.Load += new System.EventHandler(this.EditQuestionForm_Load);
             this.groupBoxAnswers.ResumeLayout(false);
             this.groupBoxAnswers.PerformLayout();

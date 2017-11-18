@@ -34,9 +34,9 @@ namespace Quiz
 
         private void treeView1_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-            if (e.Node.Name == "seequestion")
+            if (e.Node.Name == "questions")
             {
-                Questions frm = new Questions();
+                QuestionsForm frm = new QuestionsForm();
                 frm.Show();
             }
         }

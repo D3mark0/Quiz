@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace Quiz
 {
-    public partial class Questions : Form
+    public partial class QuestionsForm : Form
     {
         string ovp;
-        public Questions()
+        public QuestionsForm()
         {
             InitializeComponent();
         }
