@@ -38,7 +38,7 @@ namespace Quiz
                     textBox3.Text,
                     textBox4.Text
                 };
-                Question qst = new Question(textBoxQuestion.Text, answers, 1);
+                Question qst = new Question(textBoxQuestion.Text, answers, Convert.ToInt32(textBoxRightAnswer.Text));
                 var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
 
                 bformatter.Serialize(stream, qst);

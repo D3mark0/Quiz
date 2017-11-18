@@ -37,6 +37,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.buttonSave = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxRightAnswer = new System.Windows.Forms.TextBox();
             this.groupBoxAnswers.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -100,7 +102,7 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(12, 255);
+            this.buttonSave.Location = new System.Drawing.Point(12, 282);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(75, 23);
             this.buttonSave.TabIndex = 3;
@@ -110,18 +112,37 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(578, 255);
+            this.button2.Location = new System.Drawing.Point(578, 282);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 4;
             this.button2.Text = "Отменить";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 258);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(105, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Правильный ответ:";
+            // 
+            // textBoxRightAnswer
+            // 
+            this.textBoxRightAnswer.Location = new System.Drawing.Point(123, 255);
+            this.textBoxRightAnswer.MaxLength = 1;
+            this.textBoxRightAnswer.Name = "textBoxRightAnswer";
+            this.textBoxRightAnswer.Size = new System.Drawing.Size(20, 20);
+            this.textBoxRightAnswer.TabIndex = 6;
+            // 
             // EditQuestionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(665, 292);
+            this.ClientSize = new System.Drawing.Size(665, 317);
+            this.Controls.Add(this.textBoxRightAnswer);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.label1);
@@ -149,5 +170,7 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBoxRightAnswer;
     }
 }

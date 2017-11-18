@@ -21,7 +21,7 @@ namespace Quiz
 
         private void PasswordForm_Load(object sender, EventArgs e)
         {
-            password = "искандер";
+            password = "";
         }
 
         private void buttonNext_Click(object sender, EventArgs e)
