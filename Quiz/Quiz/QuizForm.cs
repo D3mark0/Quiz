@@ -29,6 +29,7 @@ namespace Quiz
 
     }
 
+    [Serializable]
     public class Question
     {
         String textof;

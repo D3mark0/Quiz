@@ -100,10 +100,8 @@
             treeNode35,
             treeNode36});
             System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("Посмотреть вопросы");
-            System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("Редактирование вопросов");
-            System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("Вопросы", new System.Windows.Forms.TreeNode[] {
-            treeNode38,
-            treeNode39});
+            System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("Вопросы", new System.Windows.Forms.TreeNode[] {
+            treeNode38});
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.SuspendLayout();
             // 
@@ -189,19 +187,18 @@
             treeNode37.Text = "Тестирование";
             treeNode38.Name = "seequestion";
             treeNode38.Text = "Посмотреть вопросы";
-            treeNode39.Name = "editquestion";
-            treeNode39.Text = "Редактирование вопросов";
-            treeNode40.Name = "questions";
-            treeNode40.Text = "Вопросы";
+            treeNode39.Name = "questions";
+            treeNode39.Text = "Вопросы";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode8,
             treeNode20,
             treeNode27,
             treeNode31,
             treeNode37,
-            treeNode40});
+            treeNode39});
             this.treeView1.Size = new System.Drawing.Size(582, 366);
             this.treeView1.TabIndex = 0;
+            this.treeView1.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseDoubleClick);
             // 
             // MainForm
             // 
