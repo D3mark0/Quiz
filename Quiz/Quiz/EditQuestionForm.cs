@@ -10,17 +10,16 @@ using System.Windows.Forms;
 
 namespace Quiz
 {
-    public partial class MainForm : Form
+    public partial class EditQuestionForm : Form
     {
-        public MainForm()
+        public EditQuestionForm()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void EditQuestionForm_Load(object sender, EventArgs e)
         {
 
         }
-
     }
 }
