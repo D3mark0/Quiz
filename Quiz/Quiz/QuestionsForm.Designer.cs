@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("ОВП.01. Общевоинские уставы");
-            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("ОВП.02. Строевая подготовка");
-            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("ОВП.03. Огневая подготовка");
-            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("ОВП.04. Топография");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("ОВП.01. Общевоинские уставы");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("ОВП.02. Строевая подготовка");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("ОВП.03. Огневая подготовка");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("ОВП.04. Топография");
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.textBoxQuestion = new System.Windows.Forms.TextBox();
             this.textBoxAnswers = new System.Windows.Forms.TextBox();
@@ -46,19 +46,19 @@
             // 
             this.treeView1.Location = new System.Drawing.Point(12, 12);
             this.treeView1.Name = "treeView1";
-            treeNode25.Name = "1";
-            treeNode25.Text = "ОВП.01. Общевоинские уставы";
-            treeNode26.Name = "2";
-            treeNode26.Text = "ОВП.02. Строевая подготовка";
-            treeNode27.Name = "3";
-            treeNode27.Text = "ОВП.03. Огневая подготовка";
-            treeNode28.Name = "4";
-            treeNode28.Text = "ОВП.04. Топография";
+            treeNode5.Name = "1";
+            treeNode5.Text = "ОВП.01. Общевоинские уставы";
+            treeNode6.Name = "2";
+            treeNode6.Text = "ОВП.02. Строевая подготовка";
+            treeNode7.Name = "3";
+            treeNode7.Text = "ОВП.03. Огневая подготовка";
+            treeNode8.Name = "4";
+            treeNode8.Text = "ОВП.04. Топография";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode25,
-            treeNode26,
-            treeNode27,
-            treeNode28});
+            treeNode5,
+            treeNode6,
+            treeNode7,
+            treeNode8});
             this.treeView1.Size = new System.Drawing.Size(272, 452);
             this.treeView1.TabIndex = 1;
             this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
@@ -135,7 +135,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(642, 476);
+            this.ClientSize = new System.Drawing.Size(638, 472);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonDelete);
@@ -147,6 +147,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "QuestionsForm";
             this.Text = "Вопросы";
+            this.Load += new System.EventHandler(this.QuestionsForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

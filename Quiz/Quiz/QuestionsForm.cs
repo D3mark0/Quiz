@@ -41,5 +41,10 @@ namespace Quiz
             frm.ovp = ovp;
             frm.Show();
         }
+
+        private void QuestionsForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

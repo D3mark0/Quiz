@@ -36,7 +36,7 @@ namespace Quiz
         {
             if (e.Node.Name == "questions")
             {
-                QuestionsForm frm = new QuestionsForm();
+                PasswordForm frm = new PasswordForm();
                 frm.Show();
             }
         }
