@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace Quiz
 {
-    public partial class Form1 : Form
+    public partial class QuizForm : Form
     {
-        public Form1()
+        public QuizForm()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void QuizForm_Load(object sender, EventArgs e)
         {
 
         }
@@ -26,9 +26,9 @@ namespace Quiz
     public class Question
     {
         String textof;
-        String [] answers = new String[4];
+        String[] answers = new String[4];
         int r_answer;
-        public Question(String textof, String [] answers, int r_answer)
+        public Question(String textof, String[] answers, int r_answer)
         {
             this.textof = textof;
             this.answers = answers;
