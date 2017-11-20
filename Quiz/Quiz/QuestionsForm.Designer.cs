@@ -32,6 +32,7 @@
             System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("ОВП.02. Строевая подготовка");
             System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("ОВП.03. Огневая подготовка");
             System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("ОВП.04. Топография");
+
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.textBoxQuestion = new System.Windows.Forms.TextBox();
             this.textBoxAnswers = new System.Windows.Forms.TextBox();
@@ -102,6 +103,7 @@
             this.buttonEdit.TabIndex = 4;
             this.buttonEdit.Text = "Редактировать";
             this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // buttonDelete
             // 
@@ -112,6 +114,7 @@
             this.buttonDelete.TabIndex = 5;
             this.buttonDelete.Text = "Удалить";
             this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // label1
             // 

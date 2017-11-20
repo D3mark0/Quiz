@@ -62,5 +62,14 @@ namespace Quiz
         {
             return r_answer;
         }
+        public string Text_of()
+        {
+            return textof;
+        }
+
+        public string[] Ans_wers()
+        {
+            return answers;
+        }
     }
 }
