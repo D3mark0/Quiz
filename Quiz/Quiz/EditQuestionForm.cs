@@ -29,6 +29,14 @@ namespace Quiz
             textBox2.Text = qst.Ans_wers()[1].Remove(0, 3);
             textBox3.Text = qst.Ans_wers()[2].Remove(0, 3);
             textBox4.Text = qst.Ans_wers()[3].Remove(0, 3);
+            if (qst.R_ans() == 1)
+                radioButton1.Checked = true;
+            else if (qst.R_ans() == 2)
+                radioButton2.Checked = true;
+            else if (qst.R_ans() == 3)
+                radioButton3.Checked = true;
+            else if (qst.R_ans() == 4)
+                radioButton4.Checked = true;
         }
 
         private void EditQuestionForm_Load(object sender, EventArgs e)
@@ -38,6 +46,15 @@ namespace Quiz
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            int r_ans = 0;
+            if (radioButton1.Checked)
+                r_ans = 1;
+            else if (radioButton2.Checked)
+                r_ans = 2;
+            else if (radioButton3.Checked)
+                r_ans = 3;
+            else if (radioButton4.Checked)
+                r_ans = 4;
             if (edit == false)
             {
                 int fCount = Directory.GetFiles("data/" + ovp, "*.q", SearchOption.AllDirectories).Length;
@@ -51,7 +68,7 @@ namespace Quiz
                     "3. "+textBox3.Text,
                     "4. "+textBox4.Text
                 };
-                    Question qst = new Question(textBoxQuestion.Text, answers, 1);
+                    Question qst = new Question(textBoxQuestion.Text, answers, r_ans);
                     var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
 
                     bformatter.Serialize(stream, qst);
@@ -70,7 +87,7 @@ namespace Quiz
                     "3. "+textBox3.Text,
                     "4. "+textBox4.Text
                 };
-                Question qst = new Question(textBoxQuestion.Text, answers, Convert.ToInt32(textBoxRightAnswer.Text));
+                    Question qst = new Question(textBoxQuestion.Text, answers, r_ans);
                 var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
 
                     bformatter.Serialize(stream, qst);
