@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Quiz
 {
@@ -14,15 +15,41 @@ namespace Quiz
     {
         public int ovp = 1;
         int timeLeft;
-        
+        int questionNumbers = 2;
+
         public QuizForm()
         {
             InitializeComponent();
         }
 
+        public int GetCount(int data_index)
+        {
+            return Directory.GetFiles("data/" + data_index.ToString(), "*.q", SearchOption.AllDirectories).Length;
+        }
+
         private void QuizForm_Load(object sender, EventArgs e)
         {
-            timeLeft = (1 * 1 * 2);
+            int ovp_count1 = GetCount(1);
+            int ovp_count2 = GetCount(2);
+            int ovp_count3 = GetCount(3);
+            int ovp_count4 = GetCount(4);
+            int[] ovp1_numbers = GetNumbers(questionNumbers, ovp_count1);
+            int[] ovp2_numbers = GetNumbers(questionNumbers, ovp_count2);
+            int[] ovp3_numbers = GetNumbers(questionNumbers, ovp_count3);
+            int[] ovp4_numbers = GetNumbers(questionNumbers, ovp_count4);
+
+            timeLeft = (questionNumbers*4 * 60 * 2);
+        }
+
+        public int [] GetNumbers(int n, int count)
+        {
+            int[] temp = new int[n];
+            Random rand = new Random();
+            for (int i = 0; i < temp.Length; i++)
+            {
+                temp[i] = rand.Next(1, count);//где а - минимальное значение b максимальное можешь разницу поставить 20 как тебе нужно
+            }
+            return temp;
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
