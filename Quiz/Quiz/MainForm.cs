@@ -31,8 +31,7 @@ namespace Quiz
             if (!Directory.Exists("data/4"))
                 Directory.CreateDirectory("data/4");
 
-            QuizForm frm = new QuizForm();
-            frm.Show();
+            
         }
 
         private void treeView1_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
@@ -69,7 +68,7 @@ namespace Quiz
             else if (e.Node.Name == "testall")
             {
                 QuizForm frm = new QuizForm();
-                frm.ovp = 0;
+                frm.ovp = 5;
                 frm.Show();
             }
         }

@@ -119,6 +119,7 @@
             this.buttonNext.TabIndex = 2;
             this.buttonNext.Text = "Далее";
             this.buttonNext.UseVisualStyleBackColor = true;
+            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
             // 
             // buttonExit
             // 
