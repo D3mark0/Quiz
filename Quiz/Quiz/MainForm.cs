@@ -42,6 +42,36 @@ namespace Quiz
                 PasswordForm frm = new PasswordForm();
                 frm.Show();
             }
+            else if (e.Node.Name == "test1")
+            {
+                QuizForm frm = new QuizForm();
+                frm.ovp = 1;
+                frm.Show();
+            }
+            else if (e.Node.Name == "test2")
+            {
+                QuizForm frm = new QuizForm();
+                frm.ovp = 2;
+                frm.Show();
+            }
+            else if (e.Node.Name == "test3")
+            {
+                QuizForm frm = new QuizForm();
+                frm.ovp = 3;
+                frm.Show();
+            }
+            else if (e.Node.Name == "test4")
+            {
+                QuizForm frm = new QuizForm();
+                frm.ovp = 4;
+                frm.Show();
+            }
+            else if (e.Node.Name == "testall")
+            {
+                QuizForm frm = new QuizForm();
+                frm.ovp = 0;
+                frm.Show();
+            }
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)

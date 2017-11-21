@@ -171,13 +171,13 @@
             treeNode30.Text = "ОВП.04 т.4 Рабочая карта командира";
             treeNode31.Name = "ovp4";
             treeNode31.Text = "ОВП.04. Топография";
-            treeNode32.Name = "testovp1";
+            treeNode32.Name = "test1";
             treeNode32.Text = "Раздел 1";
-            treeNode33.Name = "testovp2";
+            treeNode33.Name = "test2";
             treeNode33.Text = "Раздел 2";
-            treeNode34.Name = "testovp3";
+            treeNode34.Name = "test3";
             treeNode34.Text = "Раздел 3";
-            treeNode35.Name = "testovp4";
+            treeNode35.Name = "test4";
             treeNode35.Text = "Раздел 4";
             treeNode36.Name = "testall";
             treeNode36.Text = "Полное тестирование";

@@ -153,9 +153,9 @@
             this.labelTime.AutoSize = true;
             this.labelTime.Location = new System.Drawing.Point(126, 252);
             this.labelTime.Name = "labelTime";
-            this.labelTime.Size = new System.Drawing.Size(34, 13);
+            this.labelTime.Size = new System.Drawing.Size(93, 13);
             this.labelTime.TabIndex = 6;
-            this.labelTime.Text = "00:00";
+            this.labelTime.Text = "0 минут 0 секунд";
             // 
             // timer1
             // 

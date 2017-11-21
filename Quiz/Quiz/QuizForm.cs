@@ -12,6 +12,7 @@ namespace Quiz
 {
     public partial class QuizForm : Form
     {
+        public int ovp = 1;
         int timeLeft;
         
         public QuizForm()
