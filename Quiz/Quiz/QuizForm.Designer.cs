@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.textBoxQuestion = new System.Windows.Forms.TextBox();
             this.groupBoxAnswers = new System.Windows.Forms.GroupBox();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
@@ -37,6 +38,9 @@
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labelTime = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBoxAnswers.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,7 +113,7 @@
             // 
             // buttonNext
             // 
-            this.buttonNext.Location = new System.Drawing.Point(12, 255);
+            this.buttonNext.Location = new System.Drawing.Point(12, 282);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(75, 23);
             this.buttonNext.TabIndex = 2;
@@ -118,7 +122,7 @@
             // 
             // buttonExit
             // 
-            this.buttonExit.Location = new System.Drawing.Point(578, 255);
+            this.buttonExit.Location = new System.Drawing.Point(578, 282);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(75, 23);
             this.buttonExit.TabIndex = 3;
@@ -135,11 +139,37 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Текст вопроса:";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 252);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(108, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Оставшееся время:";
+            // 
+            // labelTime
+            // 
+            this.labelTime.AutoSize = true;
+            this.labelTime.Location = new System.Drawing.Point(126, 252);
+            this.labelTime.Name = "labelTime";
+            this.labelTime.Size = new System.Drawing.Size(34, 13);
+            this.labelTime.TabIndex = 6;
+            this.labelTime.Text = "00:00";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // QuizForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(665, 292);
+            this.ClientSize = new System.Drawing.Size(665, 317);
+            this.Controls.Add(this.labelTime);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonNext);
@@ -167,5 +197,8 @@
         private System.Windows.Forms.Button buttonNext;
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelTime;
+        private System.Windows.Forms.Timer timer1;
     }
 }

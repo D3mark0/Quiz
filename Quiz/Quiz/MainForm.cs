@@ -30,15 +30,23 @@ namespace Quiz
                 Directory.CreateDirectory("data/3");
             if (!Directory.Exists("data/4"))
                 Directory.CreateDirectory("data/4");
+
+            /*QuizForm frm = new QuizForm();
+            frm.Show();*/
         }
 
         private void treeView1_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             if (e.Node.Name == "questions")
             {
-                QuestionsForm frm = new QuestionsForm();
+                PasswordForm frm = new PasswordForm();
                 frm.Show();
             }
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
