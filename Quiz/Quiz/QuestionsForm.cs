@@ -25,13 +25,13 @@ namespace Quiz
             buttonDelete.Enabled = false;
             buttonAdd.Enabled = false;
             buttonEdit.Enabled = false;
-            if (e.Node.Name == "1" || e.Node.Name == "2" || e.Node.Name == "3" || e.Node.Name== "4")
+            /*if (e.Node.Name == "1" || e.Node.Name == "2" || e.Node.Name == "3" || e.Node.Name== "4")
             {
                 textBoxQuestion.Text = "";
                 textBoxAnswers.Text = "";
                 buttonAdd.Enabled = true;
                 ovp = e.Node.Name;
-            }
+            }*/
             if(e.Node.Text.Contains("Вопрос"))
             {
                 String parentName = e.Node.Parent.Name;
@@ -42,6 +42,8 @@ namespace Quiz
             }
             else
             {
+                buttonAdd.Enabled = true;
+                ovp = e.Node.Name;
                 textBoxQuestion.Text = "";
                 textBoxAnswers.Text = "";
             }
@@ -63,6 +65,16 @@ namespace Quiz
 
         private void QuestionsForm_Load(object sender, EventArgs e)
         {
+            treeView1.Nodes.Clear();
+            int countOf = Directory.GetDirectories("data/").Length;
+            for (int i = 1; i <= countOf; i++)
+            {
+                string line;
+                System.IO.StreamReader file = new System.IO.StreamReader("data/" + i.ToString() + "/name.txt");
+                line = file.ReadLine();
+                file.Close();
+                treeView1.Nodes.Add(i.ToString(),line);
+            }
             RefreshTree();
         }
 
@@ -82,16 +94,14 @@ namespace Quiz
 
         public void RefreshTree()
         {
+            int countOf = Directory.GetDirectories("data/").Length;
             textBoxQuestion.Text = "";
             textBoxAnswers.Text = "";
-            RefreshFiles(1);
-            RefreshFiles(2);
-            RefreshFiles(3);
-            RefreshFiles(4);
-            GetDataOf(1);
-            GetDataOf(2);
-            GetDataOf(3);
-            GetDataOf(4);
+            for(int i=1;i<=countOf;i++)
+            {
+                RefreshFiles(i);
+                GetDataOf(i);
+            }
         }
 
         public Question LoadQuestion(String parent, int indexOfNode)

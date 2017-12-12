@@ -18,9 +18,35 @@ namespace Quiz
             InitializeComponent();
         }
 
+        public void GetDataOf()
+        {
+            treeView1.Nodes.Clear();
+            int countOf = Directory.GetDirectories("data/").Length;
+            for (int i = 1; i <= countOf; i++)
+            {
+                string line;
+                System.IO.StreamReader file = new System.IO.StreamReader("data/" + i.ToString() + "/name.txt");
+                line = file.ReadLine();
+                file.Close();
+                treeView1.Nodes.Add(line);
+            }
+            treeView1.Nodes.Add("test", "Тестирование");
+            for (int i = 1; i <= countOf; i++)
+            {
+                string line;
+                System.IO.StreamReader file = new System.IO.StreamReader("data/" + i.ToString() + "/name.txt");
+                line = file.ReadLine();
+                file.Close();
+                treeView1.Nodes["test"].Nodes.Add("test"+i.ToString(),line);
+            }
+            treeView1.Nodes["test"].Nodes.Add("testall","Полное тестирование");
+            treeView1.Nodes.Add("questions", "Вопросы");
+            treeView1.Nodes.Add("section", "Разделы");
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
-            if(!Directory.Exists("data"))
+            /*if(!Directory.Exists("data"))
                 Directory.CreateDirectory("data");
             if (!Directory.Exists("data/1"))
                 Directory.CreateDirectory("data/1");
@@ -29,8 +55,8 @@ namespace Quiz
             if (!Directory.Exists("data/3"))
                 Directory.CreateDirectory("data/3");
             if (!Directory.Exists("data/4"))
-                Directory.CreateDirectory("data/4");
-
+                Directory.CreateDirectory("data/4");*/
+            GetDataOf();
             
         }
 
@@ -41,34 +67,21 @@ namespace Quiz
                 PasswordForm frm = new PasswordForm();
                 frm.Show();
             }
-            else if (e.Node.Name == "test1")
+            else if (e.Node.Name.Contains("test"))
             {
                 QuizForm frm = new QuizForm();
-                frm.ovp = 1;
-                frm.Show();
-            }
-            else if (e.Node.Name == "test2")
-            {
-                QuizForm frm = new QuizForm();
-                frm.ovp = 2;
-                frm.Show();
-            }
-            else if (e.Node.Name == "test3")
-            {
-                QuizForm frm = new QuizForm();
-                frm.ovp = 3;
-                frm.Show();
-            }
-            else if (e.Node.Name == "test4")
-            {
-                QuizForm frm = new QuizForm();
-                frm.ovp = 4;
+                frm.ovp = Convert.ToInt32(e.Node.Name.Substring(4, e.Node.Name.Length - 4));
                 frm.Show();
             }
             else if (e.Node.Name == "testall")
             {
                 QuizForm frm = new QuizForm();
                 frm.ovp = 5;
+                frm.Show();
+            }
+            else if (e.Node.Name == "section")
+            {
+                SectionForm frm = new SectionForm();
                 frm.Show();
             }
         }
