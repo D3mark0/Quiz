@@ -18,16 +18,11 @@ namespace Quiz
         int questionNumbers = 10;
         Question[] qstArray;
 
-        int[] ovp1_numbers;
-        int[] ovp2_numbers;
-        int[] ovp3_numbers;
-        int[] ovp4_numbers;
         int[][] ovp_numbers = new int[5][];
-        int ovp_count1;
-        int ovp_count2;
-        int ovp_count3;
-        int ovp_count4;
-        int GlobalCount = 0;
+
+        int globalCount = 0;
+        int resultCount = 0;
+        int answer = 0;
 
         public QuizForm()
         {
@@ -43,12 +38,14 @@ namespace Quiz
         {
             Question tmp;
             String path = "data/" + parent + "/" + indexOfNode.ToString() + ".q";
+
             using (Stream stream = File.Open(path, FileMode.Open))
             {
                 var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
 
                 tmp = (Question)bformatter.Deserialize(stream);
             }
+
             return tmp;
         }
 
@@ -71,44 +68,51 @@ namespace Quiz
             }
         }
 
-
         public void NextQuestion()
         {
-            textBoxQuestion.Text = qstArray[GlobalCount].Text_of();
-            radioButton1.Text = qstArray[GlobalCount].Ans_wers()[0].Remove(0, 3);
-            radioButton2.Text = qstArray[GlobalCount].Ans_wers()[1].Remove(0, 3);
-            radioButton3.Text = qstArray[GlobalCount].Ans_wers()[2].Remove(0, 3);
-            radioButton4.Text = qstArray[GlobalCount].Ans_wers()[3].Remove(0, 3);
+            if (questionNumbers > globalCount)
+            {
+                textBoxQuestion.Text = qstArray[globalCount].Text_of();
+                radioButton1.Text = qstArray[globalCount].Ans_wers()[0].Remove(0, 3);
+                radioButton2.Text = qstArray[globalCount].Ans_wers()[1].Remove(0, 3);
+                radioButton3.Text = qstArray[globalCount].Ans_wers()[2].Remove(0, 3);
+                radioButton4.Text = qstArray[globalCount].Ans_wers()[3].Remove(0, 3);
+            }
+            else
+            {
+                ResultForm frm = new ResultForm();
+                frm.ovp = ovp;
+                frm.result = resultCount;
+                frm.total = questionNumbers;
+
+                Close();
+                MessageBox.Show("Тестирование завершено", "Конец тестирования");
+
+                frm.Show();
+            }
         }
+
         private void QuizForm_Load(object sender, EventArgs e)
-        {            
-            ovp_count1 = GetCount(1);
-            ovp_count2 = GetCount(2);
-            ovp_count3 = GetCount(3);
-            ovp_count4 = GetCount(4);               
+        {
             timeLeft = (questionNumbers * 1 * 60 );
             if (ovp == 1)
-                ovp1_numbers = GetNumbers(questionNumbers, ovp_count1);
+                ovp_numbers[1] = GetNumbers(questionNumbers, GetCount(1));
             else if (ovp == 2)
-                ovp2_numbers = GetNumbers(questionNumbers, ovp_count2);
+                ovp_numbers[2] = GetNumbers(questionNumbers, GetCount(2));
             else if (ovp == 3)
-                ovp3_numbers = GetNumbers(questionNumbers, ovp_count3);
+                ovp_numbers[3] = GetNumbers(questionNumbers, GetCount(3));
             else if (ovp == 4)
-                ovp4_numbers = GetNumbers(questionNumbers, ovp_count4);
+                ovp_numbers[4] = GetNumbers(questionNumbers, GetCount(4));
             else if (ovp == 5)
             {
                 questionNumbers = 5;
-                ovp1_numbers = GetNumbers(questionNumbers, ovp_count1);
-                ovp2_numbers = GetNumbers(questionNumbers, ovp_count2);
-                ovp3_numbers = GetNumbers(questionNumbers, ovp_count3);
-                ovp4_numbers = GetNumbers(questionNumbers, ovp_count4);
+                ovp_numbers[1] = GetNumbers(questionNumbers, GetCount(1));
+                ovp_numbers[2] = GetNumbers(questionNumbers, GetCount(2));
+                ovp_numbers[3] = GetNumbers(questionNumbers, GetCount(3));
+                ovp_numbers[4] = GetNumbers(questionNumbers, GetCount(4));
                 timeLeft = (questionNumbers * 4 * 60);
                 questionNumbers = 20;
             }
-            ovp_numbers[1] = ovp1_numbers;
-            ovp_numbers[2] = ovp2_numbers;
-            ovp_numbers[3] = ovp3_numbers;
-            ovp_numbers[4] = ovp4_numbers;
             qstArray = new Question[questionNumbers];
             SetQuestionsArray();
             NextQuestion();
@@ -122,7 +126,7 @@ namespace Quiz
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -143,8 +147,41 @@ namespace Quiz
 
         private void buttonNext_Click(object sender, EventArgs e)
         {
-            GlobalCount++;
+            if (qstArray[globalCount].R_ans() == answer)
+                resultCount++;
+
+            radioButton1.Checked = false;
+            radioButton2.Checked = false;
+            radioButton3.Checked = false;
+            radioButton4.Checked = false;
+            buttonNext.Enabled = false;
+
+            globalCount++;
             NextQuestion();
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            buttonNext.Enabled = true;
+            answer = 1;
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            buttonNext.Enabled = true;
+            answer = 2;
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            buttonNext.Enabled = true;
+            answer = 3;
+        }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            buttonNext.Enabled = true;
+            answer = 4;
         }
     }
 
@@ -154,16 +191,19 @@ namespace Quiz
         String textof;
         String[] answers = new String[4];
         int r_answer;
+
         public Question(String textof, String[] answers, int r_answer)
         {
             this.textof = textof;
             this.answers = answers;
             this.r_answer = r_answer;
         }
+
         public int R_ans()
         {
             return r_answer;
         }
+
         public string Text_of()
         {
             return textof;
@@ -210,6 +250,5 @@ namespace Quiz
             list[i] = list[j];
             list[j] = temp;
         }
-
     }
 }

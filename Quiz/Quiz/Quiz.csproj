@@ -92,11 +92,19 @@
     <Compile Include="QuizForm.Designer.cs">
       <DependentUpon>QuizForm.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="SectionForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SectionForm.Designer.cs">
       <DependentUpon>SectionForm.cs</DependentUpon>
+=======
+    <Compile Include="ResultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResultForm.Designer.cs">
+      <DependentUpon>ResultForm.cs</DependentUpon>
+>>>>>>> 39db8faaf4072b627a84fb8b4d7ece40d43d9cf5
     </Compile>
     <EmbeddedResource Include="EditQuestionForm.resx">
       <DependentUpon>EditQuestionForm.cs</DependentUpon>
@@ -122,8 +130,13 @@
     <EmbeddedResource Include="QuizForm.resx">
       <DependentUpon>QuizForm.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="SectionForm.resx">
       <DependentUpon>SectionForm.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="ResultForm.resx">
+      <DependentUpon>ResultForm.cs</DependentUpon>
+>>>>>>> 39db8faaf4072b627a84fb8b4d7ece40d43d9cf5
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
