@@ -28,7 +28,7 @@ namespace Quiz
                 System.IO.StreamReader file = new System.IO.StreamReader("data/" + i.ToString() + "/name.txt");
                 line = file.ReadLine();
                 file.Close();
-                treeView1.Nodes.Add(line);
+                treeView1.Nodes.Add(i.ToString(),line);
             }
             treeView1.Nodes.Add("test", "Тестирование");
             for (int i = 1; i <= countOf; i++)
@@ -67,16 +67,16 @@ namespace Quiz
                 PasswordForm frm = new PasswordForm();
                 frm.Show();
             }
-            else if (e.Node.Name.Contains("test"))
+            else if (e.Node.Name.Contains("test") && e.Node.Name != "test" && e.Node.Name !="testall")
             {
                 QuizForm frm = new QuizForm();
-                frm.ovp = Convert.ToInt32(e.Node.Name.Substring(4, e.Node.Name.Length - 4));
+                frm.section = Convert.ToInt32(e.Node.Name.Substring(4, e.Node.Name.Length - 4));
                 frm.Show();
             }
             else if (e.Node.Name == "testall")
             {
                 QuizForm frm = new QuizForm();
-                frm.ovp = 5;
+                frm.section = -1;
                 frm.Show();
             }
             else if (e.Node.Name == "section")

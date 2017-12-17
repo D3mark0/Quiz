@@ -16,7 +16,7 @@ namespace Quiz
         public QuestionsForm parentFrm;
         public bool edit = false;
         public int indexOfQst;
-        public string ovp;
+        public string section;
         public EditQuestionForm()
         {
             InitializeComponent();
@@ -57,9 +57,9 @@ namespace Quiz
                 r_ans = 4;
             if (edit == false)
             {
-                int fCount = Directory.GetFiles("data/" + ovp, "*.q", SearchOption.AllDirectories).Length;
+                int fCount = Directory.GetFiles("data/" + section, "*.q", SearchOption.AllDirectories).Length;
                 fCount++;
-                using (Stream stream = File.Open("data/" + ovp + "/" + fCount.ToString() + ".q", FileMode.Create))
+                using (Stream stream = File.Open("data/" + section + "/" + fCount.ToString() + ".q", FileMode.Create))
                 {
                     String[] answers =
                     {
@@ -77,8 +77,8 @@ namespace Quiz
             }
             else
             {
-                File.Delete("data/" + ovp + "/" + indexOfQst.ToString() + ".q");
-                using (Stream stream = File.Open("data/" + ovp + "/" + indexOfQst.ToString() + ".q", FileMode.Create))
+                File.Delete("data/" + section + "/" + indexOfQst.ToString() + ".q");
+                using (Stream stream = File.Open("data/" + section + "/" + indexOfQst.ToString() + ".q", FileMode.Create))
                 {
                     String[] answers =
                     {

@@ -14,7 +14,7 @@ namespace Quiz
     public partial class QuestionsForm : Form
     {
         Question tmp = new Question("", new String[4], 1);
-        string ovp;
+        string section;
         public QuestionsForm()
         {
             InitializeComponent();
@@ -43,7 +43,7 @@ namespace Quiz
             else
             {
                 buttonAdd.Enabled = true;
-                ovp = e.Node.Name;
+                section = e.Node.Name;
                 textBoxQuestion.Text = "";
                 textBoxAnswers.Text = "";
             }
@@ -58,7 +58,7 @@ namespace Quiz
         {
             buttonAdd.Enabled = false;
             EditQuestionForm frm = new EditQuestionForm();
-            frm.ovp = ovp;
+            frm.section = section;
             frm.parentFrm = this;
             frm.Show();
         }
@@ -144,7 +144,7 @@ namespace Quiz
             buttonDelete.Enabled = false;
             buttonEdit.Enabled = false;
             EditQuestionForm frm = new EditQuestionForm();
-            frm.ovp = ovp;
+            frm.section = section;
             frm.SetData(tmp);
             frm.edit = true;
             frm.indexOfQst = treeView1.SelectedNode.Index + 1;
