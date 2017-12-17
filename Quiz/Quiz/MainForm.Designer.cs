@@ -80,6 +80,7 @@
             this.ClientSize = new System.Drawing.Size(638, 472);
             this.Controls.Add(this.treeView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "ОБЩЕВОЕННАЯ ПОДГОТОВКА";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);

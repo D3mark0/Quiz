@@ -13,6 +13,8 @@ namespace Quiz
 {
     public partial class SectionForm : Form
     {
+
+        public MainForm mainFrm;
         public SectionForm()
         {
             InitializeComponent();
@@ -20,6 +22,14 @@ namespace Quiz
 
         public void GetDataOf()
         {
+            buttonDeleteTheory.Enabled = false;
+            buttonAddTheory.Enabled = false;
+            buttonEditTheory.Enabled = false;
+            buttonDeleteSection.Enabled = false;
+            buttonAddSection.Enabled = false;
+            textBox1.Text = "";
+
+            mainFrm.GetDataOf();
             treeView1.Nodes.Clear();
             int countOfDirectories = Directory.GetDirectories("data/").Length;
             for (int i = 1; i <= countOfDirectories; i++)
@@ -32,7 +42,7 @@ namespace Quiz
 
                 treeView1.Nodes[i.ToString()].Nodes.Clear();
                 int countOfTheories = Directory.GetFiles("data/" + i.ToString(), "*.t", SearchOption.AllDirectories).Length;
-                for (int j = 0; j < countOfTheories; j++)
+                for (int j = 1; j <=countOfTheories; j++)
                 {
                     Theory tmp = LoadTheory(i.ToString(), j);
                     treeView1.Nodes[i.ToString()].Nodes.Add(j.ToString() , tmp.Name());
@@ -42,10 +52,7 @@ namespace Quiz
 
         private void SectionForm_Load(object sender, EventArgs e)
         {
-            buttonAddSection.Enabled = false;
-            buttonDeleteSection.Enabled = false;
             GetDataOf();
-
         }
 
         public Theory LoadTheory(String parent, int indexOfNode)
@@ -73,7 +80,20 @@ namespace Quiz
 
         private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-            buttonDeleteSection.Enabled = true;
+            buttonAddTheory.Enabled = false;
+            buttonEditTheory.Enabled = false;
+            buttonDeleteTheory.Enabled = false;
+            buttonDeleteSection.Enabled = false;
+            if(e.Node.Parent == null)
+            {
+                buttonDeleteSection.Enabled = true;
+                buttonAddTheory.Enabled = true;
+            }
+            else
+            {
+                buttonEditTheory.Enabled = true;
+                buttonDeleteTheory.Enabled = true;
+            }
         }
 
         public void RefreshDirs()
@@ -113,6 +133,33 @@ namespace Quiz
         private void treeView1_Leave(object sender, EventArgs e)
         {
             //buttonDeleteSection.Enabled = false;
+        }
+
+        private void buttonEditTheory_Click(object sender, EventArgs e)
+        {
+            EditSectionForm frm = new EditSectionForm();
+            frm.section = treeView1.SelectedNode.Parent.Name;
+            frm.SetData(LoadTheory(treeView1.SelectedNode.Parent.Name,treeView1.SelectedNode.Index+1));
+            frm.edit = true;
+            frm.indexOfTheory = treeView1.SelectedNode.Index + 1;
+            frm.parentFrm = this;
+            frm.Show();
+        }
+
+        private void buttonAddTheory_Click(object sender, EventArgs e)
+        {
+            EditSectionForm frm = new EditSectionForm();
+            frm.section = treeView1.SelectedNode.Name;
+            frm.parentFrm = this;
+            frm.Show();
+        }
+
+        private void buttonDeleteTheory_Click(object sender, EventArgs e)
+        {
+            String path = "data/" + treeView1.SelectedNode.Parent.Name + "/" + (treeView1.SelectedNode.Index + 1).ToString() + ".t";
+            File.Delete(path);
+            RefreshDirs();
+            GetDataOf();
         }
     }
 
