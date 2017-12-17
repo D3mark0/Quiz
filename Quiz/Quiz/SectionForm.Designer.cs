@@ -46,9 +46,9 @@
             // 
             // treeView1
             // 
-            this.treeView1.Location = new System.Drawing.Point(9, 16);
+            this.treeView1.Location = new System.Drawing.Point(6, 19);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(247, 416);
+            this.treeView1.Size = new System.Drawing.Size(263, 446);
             this.treeView1.TabIndex = 2;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
@@ -56,9 +56,10 @@
             // 
             // buttonAddSection
             // 
-            this.buttonAddSection.Location = new System.Drawing.Point(56, 99);
+            this.buttonAddSection.Enabled = false;
+            this.buttonAddSection.Location = new System.Drawing.Point(6, 67);
             this.buttonAddSection.Name = "buttonAddSection";
-            this.buttonAddSection.Size = new System.Drawing.Size(112, 26);
+            this.buttonAddSection.Size = new System.Drawing.Size(94, 23);
             this.buttonAddSection.TabIndex = 3;
             this.buttonAddSection.Text = "Добавить";
             this.buttonAddSection.UseVisualStyleBackColor = true;
@@ -68,15 +69,15 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(6, 41);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(212, 20);
+            this.textBox1.Size = new System.Drawing.Size(321, 20);
             this.textBox1.TabIndex = 4;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // buttonDeleteSection
             // 
-            this.buttonDeleteSection.Location = new System.Drawing.Point(56, 67);
+            this.buttonDeleteSection.Location = new System.Drawing.Point(233, 67);
             this.buttonDeleteSection.Name = "buttonDeleteSection";
-            this.buttonDeleteSection.Size = new System.Drawing.Size(112, 26);
+            this.buttonDeleteSection.Size = new System.Drawing.Size(94, 23);
             this.buttonDeleteSection.TabIndex = 5;
             this.buttonDeleteSection.Text = "Удалить";
             this.buttonDeleteSection.UseVisualStyleBackColor = true;
@@ -88,9 +89,9 @@
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.buttonDeleteSection);
             this.groupBox1.Controls.Add(this.buttonAddSection);
-            this.groupBox1.Location = new System.Drawing.Point(280, 6);
+            this.groupBox1.Location = new System.Drawing.Point(293, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(224, 135);
+            this.groupBox1.Size = new System.Drawing.Size(333, 107);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Раздел";
@@ -107,18 +108,18 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.treeView1);
-            this.groupBox4.Location = new System.Drawing.Point(12, 6);
+            this.groupBox4.Location = new System.Drawing.Point(12, 12);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(262, 438);
+            this.groupBox4.Size = new System.Drawing.Size(275, 471);
             this.groupBox4.TabIndex = 10;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Разделы и теория";
             // 
             // buttonAddTheory
             // 
-            this.buttonAddTheory.Location = new System.Drawing.Point(56, 19);
+            this.buttonAddTheory.Location = new System.Drawing.Point(6, 19);
             this.buttonAddTheory.Name = "buttonAddTheory";
-            this.buttonAddTheory.Size = new System.Drawing.Size(112, 23);
+            this.buttonAddTheory.Size = new System.Drawing.Size(94, 23);
             this.buttonAddTheory.TabIndex = 0;
             this.buttonAddTheory.Text = "Добавить";
             this.buttonAddTheory.UseVisualStyleBackColor = true;
@@ -126,9 +127,9 @@
             // 
             // buttonEditTheory
             // 
-            this.buttonEditTheory.Location = new System.Drawing.Point(56, 49);
+            this.buttonEditTheory.Location = new System.Drawing.Point(121, 19);
             this.buttonEditTheory.Name = "buttonEditTheory";
-            this.buttonEditTheory.Size = new System.Drawing.Size(112, 23);
+            this.buttonEditTheory.Size = new System.Drawing.Size(94, 23);
             this.buttonEditTheory.TabIndex = 1;
             this.buttonEditTheory.Text = "Редактировать";
             this.buttonEditTheory.UseVisualStyleBackColor = true;
@@ -136,9 +137,9 @@
             // 
             // buttonDeleteTheory
             // 
-            this.buttonDeleteTheory.Location = new System.Drawing.Point(56, 78);
+            this.buttonDeleteTheory.Location = new System.Drawing.Point(233, 19);
             this.buttonDeleteTheory.Name = "buttonDeleteTheory";
-            this.buttonDeleteTheory.Size = new System.Drawing.Size(112, 23);
+            this.buttonDeleteTheory.Size = new System.Drawing.Size(94, 23);
             this.buttonDeleteTheory.TabIndex = 2;
             this.buttonDeleteTheory.Text = "Удалить";
             this.buttonDeleteTheory.UseVisualStyleBackColor = true;
@@ -149,9 +150,9 @@
             this.groupBox2.Controls.Add(this.buttonDeleteTheory);
             this.groupBox2.Controls.Add(this.buttonEditTheory);
             this.groupBox2.Controls.Add(this.buttonAddTheory);
-            this.groupBox2.Location = new System.Drawing.Point(280, 147);
+            this.groupBox2.Location = new System.Drawing.Point(293, 125);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(224, 115);
+            this.groupBox2.Size = new System.Drawing.Size(333, 54);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Теория";
@@ -160,11 +161,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(513, 449);
+            this.ClientSize = new System.Drawing.Size(638, 487);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "SectionForm";
             this.Text = "Теория";

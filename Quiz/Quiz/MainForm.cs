@@ -87,6 +87,7 @@ namespace Quiz
             if (e.Node.Name == "questions")
             {
                 PasswordForm frm = new PasswordForm();
+                frm.index = 0;
                 frm.Show();
             }
             else if (e.Node.Name.Contains("test") && e.Node.Name != "test" && e.Node.Name !="testall")
@@ -103,8 +104,9 @@ namespace Quiz
             }
             else if (e.Node.Name == "section")
             {
-                SectionForm frm = new SectionForm();
+                PasswordForm frm = new PasswordForm();
                 frm.mainFrm = this;
+                frm.index = 1;
                 frm.Show();
             }
         }

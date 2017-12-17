@@ -13,6 +13,8 @@ namespace Quiz
     public partial class PasswordForm : Form
     {
         string password;
+        public int index;
+        public MainForm mainFrm;
 
         public PasswordForm()
         {
@@ -28,8 +30,17 @@ namespace Quiz
         {
             if (textBox.Text == password)
             {
-                QuestionsForm frm = new QuestionsForm();
-                frm.Show();
+                if (index == 0)
+                {
+                    QuestionsForm frm = new QuestionsForm();
+                    frm.Show();
+                }
+                else if (index == 1)
+                {
+                    SectionForm frm = new SectionForm();
+                    frm.mainFrm = mainFrm;
+                    frm.Show();
+                }
             }
             else
                 MessageBox.Show("Неверный пароль", "Ошибка");

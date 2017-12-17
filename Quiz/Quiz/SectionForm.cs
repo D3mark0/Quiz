@@ -22,6 +22,13 @@ namespace Quiz
 
         public void GetDataOf()
         {
+            buttonDeleteTheory.Enabled = false;
+            buttonAddTheory.Enabled = false;
+            buttonEditTheory.Enabled = false;
+            buttonDeleteSection.Enabled = false;
+            buttonAddSection.Enabled = false;
+            textBox1.Text = "";
+
             mainFrm.GetDataOf();
             treeView1.Nodes.Clear();
             int countOfDirectories = Directory.GetDirectories("data/").Length;
@@ -45,12 +52,7 @@ namespace Quiz
 
         private void SectionForm_Load(object sender, EventArgs e)
         {
-            buttonDeleteTheory.Enabled = false;
-            buttonAddTheory.Enabled = false;
-            buttonEditTheory.Enabled = false;
-            buttonDeleteSection.Enabled = false;
             GetDataOf();
-
         }
 
         public Theory LoadTheory(String parent, int indexOfNode)
