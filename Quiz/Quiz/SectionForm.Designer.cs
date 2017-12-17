@@ -33,12 +33,12 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.buttonDeleteSection = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.buttonAddTheory = new System.Windows.Forms.Button();
             this.buttonEditTheory = new System.Windows.Forms.Button();
             this.buttonDeleteTheory = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -95,6 +95,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Раздел";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Название раздела:";
+            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.treeView1);
@@ -113,6 +122,7 @@
             this.buttonAddTheory.TabIndex = 0;
             this.buttonAddTheory.Text = "Добавить";
             this.buttonAddTheory.UseVisualStyleBackColor = true;
+            this.buttonAddTheory.Click += new System.EventHandler(this.buttonAddTheory_Click);
             // 
             // buttonEditTheory
             // 
@@ -122,6 +132,7 @@
             this.buttonEditTheory.TabIndex = 1;
             this.buttonEditTheory.Text = "Редактировать";
             this.buttonEditTheory.UseVisualStyleBackColor = true;
+            this.buttonEditTheory.Click += new System.EventHandler(this.buttonEditTheory_Click);
             // 
             // buttonDeleteTheory
             // 
@@ -131,6 +142,7 @@
             this.buttonDeleteTheory.TabIndex = 2;
             this.buttonDeleteTheory.Text = "Удалить";
             this.buttonDeleteTheory.UseVisualStyleBackColor = true;
+            this.buttonDeleteTheory.Click += new System.EventHandler(this.buttonDeleteTheory_Click);
             // 
             // groupBox2
             // 
@@ -143,15 +155,6 @@
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Теория";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Название раздела:";
             // 
             // SectionForm
             // 
