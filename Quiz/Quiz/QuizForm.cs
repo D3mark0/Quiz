@@ -13,13 +13,13 @@ namespace Quiz
 {
     public partial class QuizForm : Form
     {
-        public int ovp = 5;
+        int countOf = Directory.GetDirectories("data/").Length;
+        public int section = 5;
         int timeLeft;
         int questionNumbers = 10;
         Question[] qstArray;
 
-        int[][] ovp_numbers = new int[5][];
-
+        int[][] section_numbers;
         int globalCount = 0;
         int resultCount = 0;
         int answer = 0;
@@ -50,14 +50,14 @@ namespace Quiz
         public void SetQuestionsArray()
         {
             int count = 0;
-            for (int i=1;i<5;i++)
+            for (int i=1;i<=countOf;i++)
             {
                 int tmp = 0;
-                if (ovp_numbers[i] != null)
+                if (section_numbers[i-1] != null)
                 {
-                    while (tmp < ovp_numbers[i].Length)
+                    while (tmp < section_numbers[i-1].Length)
                     {
-                        Question tmpQst = LoadQuestion(i.ToString(), ovp_numbers[i][tmp]);
+                        Question tmpQst = LoadQuestion(i.ToString(), section_numbers[i-1][tmp]);
                         tmp++;
                         qstArray[count] = tmpQst;
                         count++;
@@ -81,7 +81,7 @@ namespace Quiz
             else
             {
                 ResultForm frm = new ResultForm();
-                frm.ovp = ovp;
+                frm.section = section;
                 frm.result = resultCount;
                 frm.total = questionNumbers;
 
@@ -92,26 +92,22 @@ namespace Quiz
             }
         }
         private void QuizForm_Load(object sender, EventArgs e)
-        {                          
+        {       
+            section_numbers = new int[countOf][];
             timeLeft = (questionNumbers * 1 * 60 );
 
-            if (ovp == 1)
-                ovp_numbers[1] = GetNumbers(questionNumbers, GetCount(1));
-            else if (ovp == 2)
-                ovp_numbers[2] = GetNumbers(questionNumbers, GetCount(2));
-            else if (ovp == 3)
-                ovp_numbers[3] = GetNumbers(questionNumbers, GetCount(3));
-            else if (ovp == 4)
-                ovp_numbers[4] = GetNumbers(questionNumbers, GetCount(4));
-            else if (ovp == 5)
+
+            if (section == -1)
             {
                 questionNumbers = 5;
-                ovp_numbers[1] = GetNumbers(questionNumbers, GetCount(1));
-                ovp_numbers[2] = GetNumbers(questionNumbers, GetCount(2));
-                ovp_numbers[3] = GetNumbers(questionNumbers, GetCount(3));
-                ovp_numbers[4] = GetNumbers(questionNumbers, GetCount(4));
-                timeLeft = (questionNumbers * 4 * 60);
-                questionNumbers = 20;
+                for(int i=1;i<=countOf;i++)
+                    section_numbers[i-1] = GetNumbers(questionNumbers, GetCount(i));
+                timeLeft = (questionNumbers * countOf * 60);
+                questionNumbers = questionNumbers * countOf;
+            }
+            else
+            {
+                section_numbers[section-1] = GetNumbers(questionNumbers, GetCount(section));
             }
 
             qstArray = new Question[questionNumbers];
