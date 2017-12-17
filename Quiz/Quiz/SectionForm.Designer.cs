@@ -29,71 +29,163 @@
         private void InitializeComponent()
         {
             this.treeView1 = new System.Windows.Forms.TreeView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonAddSection = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonDeleteSection = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.buttonAddTheory = new System.Windows.Forms.Button();
+            this.buttonEditTheory = new System.Windows.Forms.Button();
+            this.buttonDeleteTheory = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // treeView1
             // 
-            this.treeView1.Location = new System.Drawing.Point(2, 3);
+            this.treeView1.Location = new System.Drawing.Point(9, 16);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(272, 452);
+            this.treeView1.Size = new System.Drawing.Size(247, 416);
             this.treeView1.TabIndex = 2;
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
+            this.treeView1.Leave += new System.EventHandler(this.treeView1_Leave);
             // 
-            // button1
+            // buttonAddSection
             // 
-            this.button1.Location = new System.Drawing.Point(280, 29);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 26);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Добавить раздел";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonAddSection.Location = new System.Drawing.Point(56, 99);
+            this.buttonAddSection.Name = "buttonAddSection";
+            this.buttonAddSection.Size = new System.Drawing.Size(112, 26);
+            this.buttonAddSection.TabIndex = 3;
+            this.buttonAddSection.Text = "Добавить";
+            this.buttonAddSection.UseVisualStyleBackColor = true;
+            this.buttonAddSection.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(280, 3);
+            this.textBox1.Location = new System.Drawing.Point(6, 41);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(215, 20);
+            this.textBox1.Size = new System.Drawing.Size(212, 20);
             this.textBox1.TabIndex = 4;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // button2
+            // buttonDeleteSection
             // 
-            this.button2.Location = new System.Drawing.Point(393, 29);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(102, 26);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Удалить раздел";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonDeleteSection.Location = new System.Drawing.Point(56, 67);
+            this.buttonDeleteSection.Name = "buttonDeleteSection";
+            this.buttonDeleteSection.Size = new System.Drawing.Size(112, 26);
+            this.buttonDeleteSection.TabIndex = 5;
+            this.buttonDeleteSection.Text = "Удалить";
+            this.buttonDeleteSection.UseVisualStyleBackColor = true;
+            this.buttonDeleteSection.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.buttonDeleteSection);
+            this.groupBox1.Controls.Add(this.buttonAddSection);
+            this.groupBox1.Location = new System.Drawing.Point(280, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(224, 135);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Раздел";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.treeView1);
+            this.groupBox4.Location = new System.Drawing.Point(12, 6);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(262, 438);
+            this.groupBox4.TabIndex = 10;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Разделы и теория";
+            // 
+            // buttonAddTheory
+            // 
+            this.buttonAddTheory.Location = new System.Drawing.Point(56, 19);
+            this.buttonAddTheory.Name = "buttonAddTheory";
+            this.buttonAddTheory.Size = new System.Drawing.Size(112, 23);
+            this.buttonAddTheory.TabIndex = 0;
+            this.buttonAddTheory.Text = "Добавить";
+            this.buttonAddTheory.UseVisualStyleBackColor = true;
+            // 
+            // buttonEditTheory
+            // 
+            this.buttonEditTheory.Location = new System.Drawing.Point(56, 49);
+            this.buttonEditTheory.Name = "buttonEditTheory";
+            this.buttonEditTheory.Size = new System.Drawing.Size(112, 23);
+            this.buttonEditTheory.TabIndex = 1;
+            this.buttonEditTheory.Text = "Редактировать";
+            this.buttonEditTheory.UseVisualStyleBackColor = true;
+            // 
+            // buttonDeleteTheory
+            // 
+            this.buttonDeleteTheory.Location = new System.Drawing.Point(56, 78);
+            this.buttonDeleteTheory.Name = "buttonDeleteTheory";
+            this.buttonDeleteTheory.Size = new System.Drawing.Size(112, 23);
+            this.buttonDeleteTheory.TabIndex = 2;
+            this.buttonDeleteTheory.Text = "Удалить";
+            this.buttonDeleteTheory.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.buttonDeleteTheory);
+            this.groupBox2.Controls.Add(this.buttonEditTheory);
+            this.groupBox2.Controls.Add(this.buttonAddTheory);
+            this.groupBox2.Location = new System.Drawing.Point(280, 147);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(224, 115);
+            this.groupBox2.TabIndex = 7;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Теория";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Название раздела:";
             // 
             // SectionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(507, 456);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.treeView1);
+            this.ClientSize = new System.Drawing.Size(513, 449);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.MinimizeBox = false;
+            this.MaximizeBox = false;
             this.Name = "SectionForm";
-            this.Text = "SectionForm";
+            this.Text = "Теория";
             this.Load += new System.EventHandler(this.SectionForm_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.TreeView treeView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonAddSection;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonDeleteSection;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button buttonAddTheory;
+        private System.Windows.Forms.Button buttonEditTheory;
+        private System.Windows.Forms.Button buttonDeleteTheory;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label1;
     }
 }
