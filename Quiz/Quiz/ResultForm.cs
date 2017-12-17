@@ -12,7 +12,7 @@ namespace Quiz
 {
     public partial class ResultForm : Form
     {
-        public int ovp;
+        public int section;
         public int result;
         public int total;
 
@@ -23,10 +23,26 @@ namespace Quiz
 
         private void ResultForm_Load(object sender, EventArgs e)
         {
-            if (ovp == 5)
+            if (section == -1)
                 labelTest.Text = "По всем разделам";
             else
-                labelTest.Text = "Раздел " + ovp.ToString();
+                labelTest.Text = "Раздел " + section.ToString();
+
+            labelResult.Text = result.ToString() + " из " + total.ToString();
+        }
+
+        private void ResultForm_Shown(object sender, EventArgs e)
+        {
+            if (section == -1)
+                labelTest.Text = "По всем разделам";
+            else
+            {
+                string line;
+                System.IO.StreamReader file = new System.IO.StreamReader("data/" + section.ToString() + "/name.txt");
+                line = file.ReadLine();
+                file.Close();
+                labelTest.Text = "Раздел: " + line;
+            }
 
             labelResult.Text = result.ToString() + " из " + total.ToString();
         }
