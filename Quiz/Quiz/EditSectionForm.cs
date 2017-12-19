@@ -20,6 +20,7 @@ namespace Quiz
         public EditSectionForm()
         {
             InitializeComponent();
+            richTextBox1.SelectionHangingIndent = 8;
         }
 
         public void SetData(Theory t)

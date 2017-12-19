@@ -110,6 +110,12 @@
     <Compile Include="SectionsForm.Designer.cs">
       <DependentUpon>SectionsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForm.Designer.cs">
+      <DependentUpon>ViewForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="EditQuestionForm.resx">
       <DependentUpon>EditQuestionForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SectionsForm.resx">
       <DependentUpon>SectionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForm.resx">
+      <DependentUpon>ViewForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
