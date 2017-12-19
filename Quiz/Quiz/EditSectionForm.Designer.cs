@@ -48,7 +48,7 @@
             this.groupBox1.Size = new System.Drawing.Size(641, 162);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Текст";
+            this.groupBox1.Text = "Содержание";
             // 
             // richTextBox1
             // 
@@ -103,7 +103,7 @@
             // 
             this.textBoxName.Location = new System.Drawing.Point(6, 19);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(628, 20);
+            this.textBoxName.Size = new System.Drawing.Size(629, 20);
             this.textBoxName.TabIndex = 0;
             // 
             // EditSectionForm
