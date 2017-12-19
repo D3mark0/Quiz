@@ -27,6 +27,7 @@ namespace Quiz
             buttonEditTheory.Enabled = false;
             buttonDeleteSection.Enabled = false;
             buttonAddSection.Enabled = false;
+            buttonEditSection.Enabled = false;
             textBox1.Text = "";
 
             mainFrm.GetDataOf();
