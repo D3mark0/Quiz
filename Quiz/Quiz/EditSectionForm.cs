@@ -41,6 +41,7 @@ namespace Quiz
 
                     bformatter.Serialize(stream, t);
                 }
+                parentFrm.GetDataOf();
                 this.Close();
             }
             else
@@ -53,6 +54,7 @@ namespace Quiz
 
                     bformatter.Serialize(stream, t);
                 }
+                parentFrm.GetDataOf();
                 this.Close();
             }
         }
@@ -64,6 +66,7 @@ namespace Quiz
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
+            parentFrm.GetDataOf();
             this.Close();
         }
     }
