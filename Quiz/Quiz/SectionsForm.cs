@@ -82,11 +82,15 @@ namespace Quiz
         private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             buttonAddTheory.Enabled = false;
+            textBox1.Text = "";
             buttonEditTheory.Enabled = false;
             buttonDeleteTheory.Enabled = false;
             buttonDeleteSection.Enabled = false;
+            buttonEditSection.Enabled = false;
             if(e.Node.Parent == null)
             {
+                textBox1.Text = e.Node.Text;
+                buttonEditSection.Enabled = true;
                 buttonDeleteSection.Enabled = true;
                 buttonAddTheory.Enabled = true;
             }
@@ -113,10 +117,16 @@ namespace Quiz
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            buttonAddSection.Enabled = false;
             if (textBox1.Text != "")
-                buttonAddSection.Enabled = true;
+            {
+                    buttonAddSection.Enabled = true;
+            }
             else
+            {
+                buttonEditSection.Enabled = false;
                 buttonAddSection.Enabled = false;
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -160,6 +170,13 @@ namespace Quiz
             String path = "data/" + treeView1.SelectedNode.Parent.Name + "/" + (treeView1.SelectedNode.Index + 1).ToString() + ".t";
             File.Delete(path);
             RefreshDirs();
+            GetDataOf();
+        }
+
+        private void buttonEditSection_Click(object sender, EventArgs e)
+        {
+            File.Delete("data/" + treeView1.SelectedNode.Name + "/name.txt");
+            File.WriteAllText("data/" + treeView1.SelectedNode.Name + "/name.txt", textBox1.Text);
             GetDataOf();
         }
     }

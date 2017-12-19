@@ -33,9 +33,9 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.buttonPrevious = new System.Windows.Forms.Button();
-            this.buttonNext = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
+            this.buttonNext = new System.Windows.Forms.Button();
+            this.buttonPrevious = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -90,14 +90,15 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Опции";
             // 
-            // buttonPrevious
+            // buttonClose
             // 
-            this.buttonPrevious.Location = new System.Drawing.Point(7, 28);
-            this.buttonPrevious.Name = "buttonPrevious";
-            this.buttonPrevious.Size = new System.Drawing.Size(92, 23);
-            this.buttonPrevious.TabIndex = 0;
-            this.buttonPrevious.Text = "Предыдущий";
-            this.buttonPrevious.UseVisualStyleBackColor = true;
+            this.buttonClose.Location = new System.Drawing.Point(560, 28);
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.Size = new System.Drawing.Size(75, 23);
+            this.buttonClose.TabIndex = 2;
+            this.buttonClose.Text = "Закрыть";
+            this.buttonClose.UseVisualStyleBackColor = true;
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
             // buttonNext
             // 
@@ -107,15 +108,17 @@
             this.buttonNext.TabIndex = 1;
             this.buttonNext.Text = "Следующий";
             this.buttonNext.UseVisualStyleBackColor = true;
+            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
             // 
-            // buttonClose
+            // buttonPrevious
             // 
-            this.buttonClose.Location = new System.Drawing.Point(560, 28);
-            this.buttonClose.Name = "buttonClose";
-            this.buttonClose.Size = new System.Drawing.Size(75, 23);
-            this.buttonClose.TabIndex = 2;
-            this.buttonClose.Text = "Закрыть";
-            this.buttonClose.UseVisualStyleBackColor = true;
+            this.buttonPrevious.Location = new System.Drawing.Point(7, 28);
+            this.buttonPrevious.Name = "buttonPrevious";
+            this.buttonPrevious.Size = new System.Drawing.Size(92, 23);
+            this.buttonPrevious.TabIndex = 0;
+            this.buttonPrevious.Text = "Предыдущий";
+            this.buttonPrevious.UseVisualStyleBackColor = true;
+            this.buttonPrevious.Click += new System.EventHandler(this.buttonPrevious_Click);
             // 
             // ViewForm
             // 
@@ -129,6 +132,7 @@
             this.MaximizeBox = false;
             this.Name = "ViewForm";
             this.Text = "ViewForm";
+            this.Load += new System.EventHandler(this.ViewForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

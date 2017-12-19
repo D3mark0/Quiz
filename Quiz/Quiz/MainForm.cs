@@ -109,6 +109,12 @@ namespace Quiz
                 frm.index = 1;
                 frm.Show();
             }
+            else if(e.Node.Parent!=null)
+            {
+                ViewForm frm = new ViewForm();
+                frm.SetData(e.Node.Parent.Name, e.Node.Name);
+                frm.Show();
+            }
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)

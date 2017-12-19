@@ -106,6 +106,7 @@
             this.buttonEditSection.TabIndex = 7;
             this.buttonEditSection.Text = "Редактировать";
             this.buttonEditSection.UseVisualStyleBackColor = true;
+            this.buttonEditSection.Click += new System.EventHandler(this.buttonEditSection_Click);
             // 
             // label1
             // 
