@@ -63,7 +63,7 @@ namespace Quiz
             }
             treeView1.Nodes["test"].Nodes.Add("testall","Полное тестирование");
             treeView1.Nodes.Add("questions", "Вопросы");
-            treeView1.Nodes.Add("section", "Разделы");
+            treeView1.Nodes.Add("section", "Теория");
         }
 
         private void Form1_Load(object sender, EventArgs e)
