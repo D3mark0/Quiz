@@ -86,7 +86,7 @@ namespace Quiz
                 frm.total = questionNumbers;
 
                 Close();
-                MessageBox.Show("Тестирование завершено", "Конец тестирования");
+                MessageBox.Show("Тестирование завершено", "Конец тестирования", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 frm.Show();
             }
@@ -96,23 +96,30 @@ namespace Quiz
             section_numbers = new int[countOf][];
             timeLeft = (questionNumbers * 1 * 60 );
 
-
-            if (section == -1)
+            try
             {
-                questionNumbers = 5;
-                for(int i=1;i<=countOf;i++)
-                    section_numbers[i-1] = GetNumbers(questionNumbers, GetCount(i));
-                timeLeft = (questionNumbers * countOf * 60);
-                questionNumbers = questionNumbers * countOf;
-            }
-            else
-            {
-                section_numbers[section-1] = GetNumbers(questionNumbers, GetCount(section));
-            }
+                if (section == -1)
+                {
+                    questionNumbers = 5;
+                    for(int i=1;i<=countOf;i++)
+                        section_numbers[i-1] = GetNumbers(questionNumbers, GetCount(i));
+                    timeLeft = (questionNumbers * countOf * 60);
+                    questionNumbers = questionNumbers * countOf;
+                }
+                else
+                {
+                    section_numbers[section-1] = GetNumbers(questionNumbers, GetCount(section));
+                }
 
-            qstArray = new Question[questionNumbers];
-            SetQuestionsArray();
-            NextQuestion();
+                qstArray = new Question[questionNumbers];
+                SetQuestionsArray();
+                NextQuestion();
+            }
+            catch
+            {
+                Close();
+                MessageBox.Show("Вопросов для тестирования недостаточно!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public int [] GetNumbers(int n, int count)
@@ -138,7 +145,15 @@ namespace Quiz
                 timer1.Stop();
                 labelTime.Text = "время вышло";
                 Close();
-                MessageBox.Show("Время тестирования закончилось", "Конец тестирования");
+
+                ResultForm frm = new ResultForm();
+                frm.section = section;
+                frm.result = resultCount;
+                frm.total = questionNumbers;
+
+                MessageBox.Show("Время тестирования закончилось", "Конец тестирования", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                frm.Show();
             }
         }
 

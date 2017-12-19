@@ -25,7 +25,7 @@ namespace Quiz
             this.section = section;
             this.theory = theory;
             Theory tmp = LoadTheory(section, Convert.ToInt32(theory));
-            textBoxName.Text = tmp.Name();
+            textBoxName.Text = theory + ". " + tmp.Name();
             richTextBox1.Text = tmp.Text();
         }
 
@@ -68,7 +68,7 @@ namespace Quiz
             }
             else
             {
-                MessageBox.Show("Достигнуто начало теории!", "Предупреждение", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Достигнуто начало теории!", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

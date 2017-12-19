@@ -48,6 +48,7 @@
             this.textBox.Name = "textBox";
             this.textBox.Size = new System.Drawing.Size(160, 20);
             this.textBox.TabIndex = 1;
+            this.textBox.UseSystemPasswordChar = true;
             // 
             // buttonNext
             // 

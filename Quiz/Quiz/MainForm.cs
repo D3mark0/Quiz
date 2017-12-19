@@ -49,7 +49,7 @@ namespace Quiz
                 for (int j = 1; j <= countOfTheories; j++)
                 {
                     Theory tmp = LoadTheory(i.ToString(), j);
-                    treeView1.Nodes[i.ToString()].Nodes.Add(j.ToString(), tmp.Name());
+                    treeView1.Nodes[i.ToString()].Nodes.Add(j.ToString(), j.ToString() + ". " + tmp.Name());
                 }
             }
             treeView1.Nodes.Add("test", "Тестирование");

@@ -23,7 +23,7 @@ namespace Quiz
 
         private void PasswordForm_Load(object sender, EventArgs e)
         {
-            password = "";
+            password = "тополь";
         }
 
         private void buttonNext_Click(object sender, EventArgs e)
@@ -43,7 +43,7 @@ namespace Quiz
                 }
             }
             else
-                MessageBox.Show("Неверный пароль", "Ошибка");
+                MessageBox.Show("Неверный пароль!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             this.Close();                
         }
