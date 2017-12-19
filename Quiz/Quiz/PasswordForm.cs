@@ -37,7 +37,7 @@ namespace Quiz
                 }
                 else if (index == 1)
                 {
-                    SectionForm frm = new SectionForm();
+                    SectionsForm frm = new SectionsForm();
                     frm.mainFrm = mainFrm;
                     frm.Show();
                 }

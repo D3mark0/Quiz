@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace Quiz
 {
-    public partial class SectionForm : Form
+    public partial class SectionsForm : Form
     {
 
         public MainForm mainFrm;
-        public SectionForm()
+        public SectionsForm()
         {
             InitializeComponent();
         }

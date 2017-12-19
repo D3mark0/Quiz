@@ -1,6 +1,6 @@
 ﻿namespace Quiz
 {
-    partial class SectionForm
+    partial class SectionsForm
     {
         /// <summary>
         /// Required designer variable.

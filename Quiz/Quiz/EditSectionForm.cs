@@ -13,7 +13,7 @@ namespace Quiz
 {
     public partial class EditSectionForm : Form
     {
-        public SectionForm parentFrm;
+        public SectionsForm parentFrm;
         public bool edit = false;
         public int indexOfTheory;
         public string section;
