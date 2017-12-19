@@ -144,7 +144,7 @@ namespace Quiz
             {
                 timer1.Stop();
                 labelTime.Text = "время вышло";
-                Close();
+                
 
                 ResultForm frm = new ResultForm();
                 frm.section = section;
@@ -154,6 +154,8 @@ namespace Quiz
                 MessageBox.Show("Время тестирования закончилось", "Конец тестирования", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 frm.Show();
+
+                Close();
             }
         }
 

@@ -26,7 +26,7 @@ namespace Quiz
             if (section == -1)
                 labelTest.Text = "По всем разделам";
             else
-                labelTest.Text = "Раздел " + section.ToString();
+                labelTest.Text = section.ToString();
 
             labelResult.Text = result.ToString() + " из " + total.ToString();
         }
@@ -41,7 +41,7 @@ namespace Quiz
                 System.IO.StreamReader file = new System.IO.StreamReader("data/" + section.ToString() + "/name.txt");
                 line = file.ReadLine();
                 file.Close();
-                labelTest.Text = "Раздел: " + line;
+                labelTest.Text = line;
             }
 
             labelResult.Text = result.ToString() + " из " + total.ToString();
