@@ -97,5 +97,20 @@ namespace Quiz
         {
             this.Close();
         }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            double scale = 8.25;
+            if (numericUpDown1.Value == 2)
+                scale*=1.25;
+            else if (numericUpDown1.Value == 3)
+                scale*=1.5;
+            else if (numericUpDown1.Value == 4)
+                scale*=1.75;
+            else if (numericUpDown1.Value == 5)
+                scale*=2;
+            richTextBox1.Font = new Font("Microsoft Sans Serif", Convert.ToSingle(scale));
+            
+        }
     }
 }
